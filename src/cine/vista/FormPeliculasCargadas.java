@@ -1,3 +1,5 @@
+/* Formulario de Películas Cargadas */
+
 package cine.vista;
 
 import javax.swing.JTable;

@@ -1,3 +1,4 @@
+/* Formulario Registro de Película */
 
 package cine.vista;
 
@@ -25,7 +26,6 @@ import javax.swing.text.*;
 
 @SuppressWarnings("unchecked")
 public class FormRegistroPelicula extends javax.swing.JFrame {
-
     private enum BColor {
         NORMAL, ERROR
     };
@@ -42,7 +42,6 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
         bcMap.put(BColor.NORMAL, normal);
         bcMap.put(BColor.ERROR, error);
         populateCmbAnioEstreno();
-
     }
 
     @SuppressWarnings("unchecked")
@@ -73,6 +72,8 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
         lblAnioEstreno = new javax.swing.JLabel();
         cmbAnioEstreno = new javax.swing.JComboBox();
         txtDuracionMinutos = new javax.swing.JFormattedTextField();
+        jLabel9 = new javax.swing.JLabel();
+        cmbAnioEstreno1 = new javax.swing.JComboBox();
         jPanel8 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnRegistrar = new javax.swing.JButton();
@@ -199,7 +200,12 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
 
         jLabel6.setText("País de Origen:");
 
-        cmbPaisDeOrigen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Argentina", "Australia", "Estados Unidos", "Francia" }));
+        cmbPaisDeOrigen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Argentina", "Italia", "España", "Alemania", "Brasil", "Francia", "Estados Unidos", "India" }));
+        cmbPaisDeOrigen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbPaisDeOrigenActionPerformed(evt);
+            }
+        });
 
         cmbGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Acción", "Comedia", "Drama", "Suspenso", "Terror" }));
         cmbGenero.addActionListener(new java.awt.event.ActionListener() {
@@ -245,7 +251,7 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingrese los datos restantes"));
         jPanel7.setPreferredSize(new java.awt.Dimension(12, 147));
 
-        jLabel7.setText("Duración en minutos:");
+        jLabel7.setText("Duración (minutos):");
 
         jLabel8.setText("Titulo Original:");
 
@@ -270,6 +276,17 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
         txtDuracionMinutos.setText("120");
         txtDuracionMinutos.setPreferredSize(new java.awt.Dimension(6, 25));
 
+        jLabel9.setText("Calificación (edad):");
+
+        cmbAnioEstreno1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cmbAnioEstreno1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ATP", "+13", "+16", "+18", "C" }));
+        cmbAnioEstreno1.setPreferredSize(new java.awt.Dimension(28, 25));
+        cmbAnioEstreno1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbAnioEstreno1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -279,34 +296,40 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
-                    .addComponent(lblAnioEstreno))
+                    .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtTituloOriginal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(txtDuracionMinutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(249, 249, 249))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(cmbAnioEstreno, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbAnioEstreno1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(txtDuracionMinutos, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(73, 73, 73)
+                                .addComponent(lblAnioEstreno)
+                                .addGap(18, 18, 18)
+                                .addComponent(cmbAnioEstreno, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(165, 165, 165))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(txtDuracionMinutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(txtTituloOriginal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtDuracionMinutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAnioEstreno)
                     .addComponent(cmbAnioEstreno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(cmbAnioEstreno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
@@ -355,13 +378,13 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(radioBtnDisponibleSi, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(radioBtnDisponibleNo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnRegistrar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(radioBtnDisponibleNo))
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(513, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnGuardar)
@@ -369,29 +392,23 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
                 .addComponent(btnCerrar)
                 .addGap(18, 18, 18))
         );
-
-        jPanel8Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {radioBtnDisponibleNo, radioBtnDisponibleSi});
-
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(btnRegistrar))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(btnRegistrar))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(radioBtnDisponibleSi, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(radioBtnDisponibleNo, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnGuardar)
-                            .addComponent(btnCerrar)))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(jLabel2)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(radioBtnDisponibleSi)
+                        .addComponent(jLabel2))
+                    .addComponent(radioBtnDisponibleNo, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnCerrar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -484,14 +501,19 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
     private void btnVerPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPeliculasActionPerformed
     }//GEN-LAST:event_btnVerPeliculasActionPerformed
 
+    private void cmbPaisDeOrigenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPaisDeOrigenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbPaisDeOrigenActionPerformed
+
+    private void cmbAnioEstreno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbAnioEstreno1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbAnioEstreno1ActionPerformed
+
     public void setImagen() {
         java.net.URL imgURL = getClass().getResource("imagenes/pelicula.jpg");
         Image formImagen1 = getDefaultToolkit().getImage(imgURL);
-
         PostImagen postImagen;
-
         postImagen = new PostImagen(this.jPanelImgForm, formImagen1);
-
         this.jPanelImgForm.add(postImagen);
     }
 
@@ -499,7 +521,6 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
         ArrayList<Integer> anios = new ArrayList<>();
         int anioInicio = 1900;
         int anioLimite = this.getAnioActual() + 1;
-
         for (int i = anioInicio; i < anioLimite; i++) {
             anios.add(i);
         }
@@ -585,9 +606,7 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
         this.setFocoFormPelicula(campo);
     }
 
-    /**
-     * Se retorna un objeto ImageIcon, o null si la ruta URL no es válida
-     */
+    /* Se retorna un objeto ImageIcon, o null si la ruta URL no es válida */
     protected ImageIcon createImageIcon(String path, String description) {
         java.net.URL imgURL = getClass().getResource(path);
 
@@ -610,18 +629,18 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
     public void popingUpPeliculaYaExiste(String txtNombrePelicula) {
 
         ImageIcon icono = createImageIcon("imagenes/warning.png",
-            "La película ya existe en la base de datos.");
+            "Película ya existe en nuestra base de datos.");
 
-        JOptionPane.showMessageDialog(this, "La película : " + txtNombrePelicula
-            + " , ya existe en la base de datos.", "Aviso Película registrada",
+        JOptionPane.showMessageDialog(this, "Película : " + txtNombrePelicula
+            + " , ya existe en nuestra base de datos.", "Aviso Película Registrada",
             JOptionPane.ERROR_MESSAGE, icono);
     }
 
     public void popingUpPeliculaGuardadaOk() {
         ImageIcon icono = createImageIcon("imagenes/done.png",
-            "Película, guardada satisfactoriamente!");
+            "Película guardada correctamente.");
 
-        JOptionPane.showMessageDialog(this, "Película, guardada satisfactoriamente!", "Guardar Película",
+        JOptionPane.showMessageDialog(this, "Película guardada correctamente!", "Guardar Película",
             JOptionPane.INFORMATION_MESSAGE, icono);
     }
 
@@ -629,8 +648,8 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
         ImageIcon icono = createImageIcon("imagenes/error.png",
             "Datos error");
 
-        JOptionPane.showMessageDialog(this, "La película : " + txtNombrePelicula
-            + " , tiene incosistencia de datos!\n Por favor revise los datos antes de pretender guardarlos!", "Error de Datos Película",
+        JOptionPane.showMessageDialog(this, "Película : " + txtNombrePelicula
+            + " , tiene incosistencia de datos.\n Por favor revise los datos antes de guardar.", "Error de Datos Película",
             JOptionPane.ERROR_MESSAGE, icono);
     }
 
@@ -751,6 +770,7 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
     private javax.swing.JButton btnVerificarExistenciaPelicula;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox cmbAnioEstreno;
+    private javax.swing.JComboBox cmbAnioEstreno1;
     private javax.swing.JComboBox<String> cmbCalificacion;
     private javax.swing.JComboBox<String> cmbGenero;
     private javax.swing.JComboBox<String> cmbPaisDeOrigen;
@@ -764,6 +784,7 @@ public class FormRegistroPelicula extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
