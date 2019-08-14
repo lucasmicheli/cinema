@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* Modelo */
 package cine.modelo;
 
 import static cine.controlador.Controlador.cnt_Ids;
 import cine.vista.FormRegistroPelicula;
 import java.util.ArrayList;
 
-/**
- *
- * @author Juan
- */
 public class Modelo {
-
     private ArrayList<Actor> actores;
     private ArrayList<Calificacion> calificaciones;
     private ArrayList<Cine> cines;
@@ -88,27 +79,16 @@ public class Modelo {
     }
 
     public void guardarPeliculas(FormRegistroPelicula vista, int id) {
-
         Pelicula pelicula = new Pelicula();
-
         pelicula.setId(id);
-
         pelicula.vista(vista.getTxtNombrePelicula().getText());
-
         pelicula.setDuracion(Integer.parseInt(vista.getTxtDuracionMinutos()
                 .getText()));
-
         pelicula.setTituloOriginal(vista.getTxtTituloOriginal().getText());
-
         pelicula.setAnioEstreno((int) vista.getCmbAnioEstreno().getSelectedItem());
-
         boolean disponibilidad = ((vista.getRadioBtnDisponibleSi().isSelected()));
-
         pelicula.setDisponible(disponibilidad);
-
         this.getPeliculas().add(pelicula);
-
-//        System.out.println(this.getPeliculas().toString());
+        // System.out.println(this.getPeliculas().toString());
     }
-
 }
