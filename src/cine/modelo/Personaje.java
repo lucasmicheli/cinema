@@ -1,20 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* Personaje */
+
 package cine.modelo;
 
-/**
- *
- * @author Juan
- */
 public class Personaje {
-
     private String nombreEnPelicula;
-
     public Personaje(String nombreEnPelicula) {
-
         this.nombreEnPelicula = nombreEnPelicula;
     }
 
@@ -23,19 +13,15 @@ public class Personaje {
     }
 
     public String getNombreEnPelicula() {
-
         return nombreEnPelicula;
     }
 
     public void setNombreEnPelicula(String nombreEnPelicula) {
-
         this.nombreEnPelicula = nombreEnPelicula;
     }
 
     @Override
     public String toString() {
-
         return "Personaje{" + "nombreEnPelicula=" + nombreEnPelicula + '}';
     }
-
 }

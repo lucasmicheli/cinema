@@ -1,44 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* Sexo */
+
 package cine.modelo;
 
-/**
- *
- * @author Juan
- */
-public class Sexo {
-
-    
+public class Sexo {    
     private String nombre;
-    
 
     public Sexo(String nombre) {
-
         this.nombre = nombre;
-
     }
 
     Sexo() {
-        
+        //
     }
 
     public String getNombre() {
-
         return nombre;
     }
 
     public void setNombre(String nombre) {
-
         this.nombre = nombre;
     }
 
     @Override
     public String toString() {
-
         return "Sexo{" + "nombre=" + nombre + '}';
     }
-
 }
