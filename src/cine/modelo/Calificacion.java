@@ -1,20 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* Calificación de Película */
+
 package cine.modelo;
 
-/**
- *
- * @author Juan
- */
 public class Calificacion {
-
     private String nombre;
-
     public Calificacion(String nombre) {
-
         this.nombre = nombre;
     }
 
@@ -23,19 +13,15 @@ public class Calificacion {
     }
 
     public String getNombre() {
-
         return nombre;
     }
 
     public void setNombre(String nombre) {
-
         this.nombre = nombre;
     }
 
     @Override
     public String toString() {
-
         return "Calificacion{" + "nombre=" + nombre + '}';
     }
-
 }
