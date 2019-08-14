@@ -26,7 +26,7 @@ otros no, dependiendo de factores como: horarios, calificación de las película
 película está calificada como para mayores de 16 años, para esa función no se pueden vender entradas de
 TIPO = MENOR. Cada función tiene asociado un tipo de función, que determina si la función es un preestreno, un estreno, una función normal.
 
-![](/images/Modelo de Dominio.jpg)
+![](/imagenes/ModeloDeDominio.jpg)
 
-![](/images/Casos de Uso.jpg)
+![](/imagenes/CasosDeUso.jpg)
 
